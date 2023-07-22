@@ -1,0 +1,828 @@
+API URL -->> 
+/*	
+    https://admin.panel.url/api-firebase/
+*/
+----------------------------------------------------------
+API Files list 
+----------------------------------------------------------
+1. get-categories.php
+2. get-subcategories-by-category-id.php
+3. offer-images.php
+4. get-products-by-category-id.php
+5. get-products-by-subcategory-id.php
+6. get-product-by-id.php
+7. order-process.php
+8. register-device.php
+9. user-registration.php
+10. login.php
+11. products-search.php
+12. sections.php
+13. settings.php
+14. slider-images.php
+15. get-areas-by-city-id.php
+16. get-categories.php
+17. get-cities.php
+18. payment-request.php
+19. get-user-data.php
+20. get-all-products.php
+21. validate-promo-code.php
+22. ../paypal/create-payment.php
+23. create-razorpay-order.php
+24. cart.php
+25. get-user-transactions.php
+26. user-addresses.php
+27. favorites.php
+28. get-products-offline.php
+29. get-variants-ofline.php
+30. remove-fcm-id.php
+31. get-faqs.php
+32. get-similar-products.php
+33. get-all-data.php
+34. ../midtrans/create-payment.php
+35. ../stripe/index.php
+36. ../paytm/generate-checksum.php
+37. ../paytm/valid-transction.php
+38. get-product-advt.php
+39. get-blogs.php
+40. flash-sales.php
+41. shop.php
+42. support-ticket.php
+
+------------------------------------------
+What parameters to be Passed?  See here >>
+------------------------------------------
+
+Use POST method to pass the parameters
+
+1. get-categories.php
+    accesskey:90336
+
+2. get-subcategories-by-category-id.php
+    accesskey:90336
+    category_id:28
+
+2. get-cities.php
+    accesskey:90336
+	
+3. offer-images.php
+    accesskey:90336
+    get-offer-imagese:1
+
+4. get-products-by-category-id.php
+    accesskey:90336
+    category_id:28
+    user_id:369         // {optional}
+    limit:10            // {optional}
+    offset:0            // {optional}
+    sort:new / old / high / low     // {optional}
+
+5. get-products-by-subcategory-id.php
+    accesskey:90336
+    subcategory_id:63
+    user_id:369 {optional}
+    limit:10 // {optional}
+    offset:0 // {optional}
+    sort:new / old / high / low    // {optional}
+
+6. get-product-by-id.php
+    accesskey:90336
+	product_id:230 OR slug:onion-1
+	user_id:369     // {optional}
+
+7. order-process.php
+    1. Place_order
+        accesskey:90336
+        place_order:1
+        user_id:32
+        mobile:0123456789
+        product_variant_id:["551","550"]
+        quantity:["3","1"]
+        delivery_charge:50
+        total:500
+        final_total:550
+        address:bhuj
+        latitude:44.456321
+        longitude:12.456987
+        payment_method:Paypal / Payumoney / COD / PAYTM / razorpay / bank transfer
+        discount:10         // {optional}
+        tax_percentage:20   // {optional}
+        tax_amount:30       // {optional}
+        area_id:1           // {optional}
+        order_note:home     // {optional}
+        wallet_balance:450  // {optional}
+        promo_code:NEW20    // {optional}
+        promo_discount:40   // {optional}
+        order_from:test     // {optional}
+        local_pickup:0/1    // {optional}
+        wallet_used:true/false  // {optional}
+        status:awaiting_payment     // {optional}
+        delivery_time:Today - Evening (4:00pm to 7:00pm)    // {optional}
+		
+    2. get_orders
+        accesskey:90336
+        get_orders:73
+        user_id:101
+        order_id:20     // {optional}
+        pickup:0 / 1    // {optional}
+        limit:20        // {optional}
+        offset:5        // {optional}
+        status:received | processed | shipped | delivered | cancelled | returned | ready_to_pickup   // {optional}
+
+    3. update_order_status
+        accesskey:90336
+        update_order_status:1
+        id:169
+        status:cancelled
+        delivery_boy_id:20      // {optional}
+        pickup_time:
+
+    4. get_settings
+        accesskey:90336
+        get_settings:1
+
+    5. update_order_total_payable
+        accesskey:90336
+        update_order_total_payable:1
+        id:5
+        deliver_by:sagar
+        discount:10
+        total_payble:60.0
+		
+    6. add_transaction
+        add_transaction:1
+        accesskey:90336
+        user_id:1
+        order_id:1001
+        type:payumoney / paypal
+        txn_id:PAYMENT_GATEWAY_TXN_ID
+        amount:89.00
+        status:success / Completed / failed / pending   // { anything returned from payment gateway }
+        message:Message from payment gateway for successful / failure transaction
+        transaction_date:2019-11-29 13:15:00
+		
+    7. update_order_item_status
+        accesskey:90336
+        update_order_item_status:1
+        order_item_id:1
+        order_id:1
+        status:processed
+		
+    8. delete_order
+        accesskey:90336
+        delete_order:1
+        order_id:73
+
+    9. get_reorder_data
+        accesskey:90336
+        id:12 / order_id
+
+    10. upload_bank_transfers_attachment
+        accesskey:90336
+        upload_bank_transfers_attachment:1
+        order_id:1
+        image[]:FILE
+	
+    11. delete_bank_transfers_attachment
+        accesskey:90336
+        delete_bank_transfers_attachment:1
+        order_id:1
+        id:2
+
+    12. get_order_invoice
+        accesskey:90336
+        get_order_invoice:1
+        order_id:1  OR invoice_id:2
+	    
+8. register-device.php
+    accesskey:90336 
+    user_id:500
+    token:227
+
+9. user-registration.php
+    i. Verify User
+        accesskey:90336
+        type:verify-user
+        mobile:8980834200
+		
+    ii. After successful OTP verification Register User
+        accesskey:90336
+        type:register
+        name:Jaydeep Goswami
+        email:jaydeepjgiri@yahoo.com
+        password:36652
+        country_code:91
+        mobile:7894561230
+        fcm_id:YOUR_FCM_ID
+        dob:15-12-1990
+        city_id:1
+        area_id:1
+        street: bhuj
+        pincode: 191104
+        api_key:abc@123
+        referral_code:QCZYBEXHK5
+        latitude:44.968046
+        longitude:-94.420307
+        friends_code:FFREGRGSD7     // {optional}
+        profile:FILE                // {optional}
+		
+    iii. Edit the user profile
+        accesskey:90336
+        type:edit-profile
+        id:5
+        name:Jaydeep Goswami
+        email:jaydeepjgiri@yahoo.com
+        password:36652
+        city_id:1
+        area_id:1
+        street: bhuj
+        pincode: 191104
+        dob:15-12-1990
+        latitude:44.968046
+        longitude:-94.420307
+        profile:FILE        // {optional}
+
+    iv. Change the password
+        accesskey:90336
+        type:change-password
+        id:5
+        password:36652
+
+    v. To reset / recover password via email
+        accesskey:90336
+        type:forgot-password-email
+        email:jaydeepjgiri@yahoo.com
+
+    vi. To reset / recover password via mobile number
+        accesskey:90336
+        type:forgot-password-mobile
+        mobile:7894561230
+
+    vii. To register user's FCM token
+        accesskey:90336
+        type:register-device
+        user_id:16
+        token:1155
+	
+    viii. upload_profile
+        accesskey:90336
+        type:upload_profile
+        profile:FILE
+        user_id:16
+
+10. login.php
+    accesskey:90336
+    mobile:9876543210
+    password:123456
+    fcm_id:YOUR_FCM_ID
+
+11. products-search.php
+    accesskey:90336
+    type:products-search
+    search:Powder
+    user_id:452     // {optional}
+    offset:0        // {optional}
+    limit:10        // {optional}
+    sort:id         // {optional}
+    order:ASC/DESC  // {optional}
+
+12. sections.php
+    i. get all sections 
+        accesskey:90336
+        get-all-sections:1
+        user_id : 369       // {optional} 
+        section_id:99       // {optional}
+        limit:10            // {optional}
+        offset:0            // {optional}
+	
+    ii. To get notifications pagination wise
+        accesskey:90336
+        get-notifications:1
+        limit:10            // {optional}
+        offset:0            // {optional}
+        sort:id / type      // {optional}
+        order:DESC / ASC    // {optional}
+    
+    iii. To get delivery boy notifications pagination wise
+        get-delivery-boy-notifications:1
+        delivery_boy_id:10      // {optional}
+        limit:10                // {optional}
+        offset:0                // {optional}
+        sort:id / type          // {optional}
+        order:DESC / ASC        // {optional}
+        type:order_status/order_reward  // {optional}
+	
+13. settings.php
+    1. get_payment_methods
+        accesskey:90336
+        settings:1
+        get_payment_methods:1
+    
+    2. get_privacy
+        accesskey:90336
+        settings:1
+        get_privacy:1
+
+    3. get_terms
+        accesskey:90336
+        settings:1
+        get_terms:1
+
+    4. get_logo
+        accesskey:90336
+        settings:1
+        get_logo:1
+
+    5. get_contact
+        accesskey:90336
+        settings:1
+        get_contact:1
+
+    6. get_about_us
+        accesskey:90336
+        settings:1
+        get_about_us:1
+
+    7. get_timezone
+        accesskey:90336
+        settings:1
+        get_timezone:1
+
+    8. get_fcm_key
+        accesskey:90336
+        settings:1
+        get_fcm_key:1
+
+    9. get_time_slot_config
+        accesskey:90336
+        settings:1
+        get_time_slot_config:1
+
+    10. get_front_end_settings
+        accesskey:90336
+        settings:1
+        get_front_end_settings:1
+
+    11. get_time_slots
+        accesskey:90336
+        settings:1
+        get_time_slots:1
+
+    12. all
+        accesskey:90336
+        settings:1
+        all:1
+        
+14. slider-images.php
+    i. get-slider-images
+        accesskey:90336
+        get-slider-images:1
+	
+15. get-areas-by-city-id.php
+    accesskey:90336
+    city_id:24 
+    keyword:Mirzapar    // {optional}
+    limit:10            // {optional}
+    offset:0            // {optional}
+	
+16. get-categories.php
+    accesskey:90336
+	
+17. get-cities.php
+    accesskey:90336 
+    city_id:24  // {optional}
+    limit:10    // {optional}
+    offset:0    // {optional}
+
+18. payment-request.php
+    i. payment_request
+        accesskey:90336
+        payment_request:1
+        user_id:5
+        amount_requested:100
+        payment_type:mobile {OR} bank
+        payment_address:9876543210 {OR} [["account_holder_name","girish"],["account_number","13062019010"],["ifsc_code","BOBDUD"],["bank","BOB"]]
+
+    ii. get_payment_request
+        accesskey:90336
+        get_payment_requests:1
+        user_id:5
+
+    iii.verify_paystack_transaction
+        accesskey:90336
+        verify_paystack_transaction:1
+        email:customer@gmail.com
+        amount:27000
+        reference:T071240102627662
+        	 
+19. get-user-data.php
+    accesskey:90336
+    get_user_data:1
+    user_id:1
+	
+20. get-all-products.php
+    i. get_all_products
+        accesskey:90336
+        get_all_products:1
+        product_id:219      // {optional}
+        user_id:1782        // {optional}
+        slug:green-apple-1  // {optional}
+        category_id:29      // {optional}
+        subcategory_id:63   // {optional}
+        limit:5             // {optional}
+        offset:1            // {optional}
+        sort:id             // {optional}
+        order:asc/desc      // {optional}
+
+    ii. get_all_products_name
+        accesskey:90336
+        get_all_products_name:1
+
+    iii.add_products_review
+        accesskey:90336
+        add_products_review:1
+        product_id:219      
+        user_id:23        
+        rate:value
+        review:string
+        images[]:FILE    //{optional}
+            
+    iv.get_product_reviews
+        accesskey:90336
+        get_product_reviews:1
+        product_id:220      //{optional}
+        slug:product-slug   // { product_id or slug should be pass}
+        user_id:29          // {optional}
+        limit:5             // {optional}
+        offset:1            // {optional}
+        sort:id             // {optional}
+        order:asc/desc      // {optional}
+
+    v. delete_review_images
+        accesskey:90336
+        delete_review_images:1
+        product_id:220     
+        user_id:29   
+    
+21. validate-promo-code.php
+    i. validate_promo_code
+        accesskey:90336
+        validate_promo_code:1
+        user_id:101
+        promo_code:NEW20
+        total:500
+    
+    ii. get_promo_codes
+        accesskey:90336
+        get_promo_codes:1
+        offset:0        // {optional}
+        limit:10        // {optional}
+        sort:id         // {optional}
+        order:desc      // {optional}
+
+22. create-payment.php
+    accesskey:90336
+    first_name:Jaydeep
+    last_name:Goswami
+    item_number:110
+    item_name:eKart
+    amount:100
+    payer_email:testing@infinitietech.com
+
+23. create-razorpay-order.php
+    accesskey:90336
+    amount:100
+
+24. cart.php
+    i. add_to_cart
+        accesskey:90336
+        add_to_cart:1
+        user_id:3
+        product_id:1
+        product_variant_id:4
+        qty:2
+
+    ii.add_multiple_items_to_cart
+        accesskey:90336
+        add_multiple_items:1 OR save_for_later_items:1
+        user_id:3
+        product_variant_id:203,198,202
+        qty:1,2,1
+
+    iii. remove_from_cart
+        accesskey:90336
+        remove_from_cart:1
+        user_id:3
+        product_variant_id:4    // {optional}
+
+    iv. get_user_cart
+        accesskey:90336
+        get_user_cart:1
+        user_id:3
+        offset:0        // {optional}
+        limit:5         // {optional}
+
+    v. add_save_for_later
+        accesskey:90336
+        add_save_for_later:1
+        user_id:221
+        product_variant_id:462
+
+    vi. remove_save_for_later
+        accesskey:90336
+        remove_save_for_later:1
+        user_id:3
+        product_variant_id:456
+
+    vii. get_save_for_later
+        accesskey:90336
+        get_save_for_later:1
+        user_id:3
+
+25. get-user-transactions.php
+    i. get_user_transactions
+        accesskey:90336
+        get_user_transactions:1
+        user_id:3
+        type:transactions/wallet_transactions
+        offset:0        // {optional}
+        limit:5         // {optional}
+	
+    ii. add_wallet_balance
+        accesskey:90336
+        add_wallet_balance:1
+        user_id:3
+        amount:100
+        type:credit
+        message: transaction by user    // {optional}
+
+26. user-addresses.php
+    i. add_address
+        accesskey:90336
+        add_address:1
+        user_id:3
+        type:Home/Office
+        name:John Smith
+        mobile:1234567890
+        address:Time Square Empire
+        landmark:Bhuj-Mirzapar Highway
+        area_id:1
+        city_id:2
+        pincode:0123456
+        state:Gujarat
+        country:India
+        latitude:value              // {optional}
+        longitude:value             // {optional}
+        is_default:0/1              // {optional}
+        country_code:+91            // {optional}
+        alternate_mobile:9876543210 // {optional}
+
+    ii. update_address
+        accesskey:90336
+        update_address:1
+        id:1
+        user_id:1
+        is_default:0/1
+        area_id:1               // {optional}
+        city_id:2               // {optional}
+        type:Home/Office        // {optional}
+        name:John Smith         // {optional}
+        country_code:+91        // {optional}
+        mobile:1234567890       // {optional}
+        pincode:0123456         // {optional}
+        state:Gujarat           // {optional}
+        country:India           // {optional}
+        state:Gujarat           // {optional}
+        country:India           // {optional}
+        latitude:value          // {optional}
+        longitude:value         // {optional}
+        alternate_mobile:9876543210     // {optional}
+        address:Time Square Empire      // {optional}
+        landmark:Bhuj-Mirzapar Highway  // {optional}
+
+    iii.delete_address
+        accesskey:90336
+        delete_address:1
+        id:3
+
+    iv.get_addresses
+        accesskey:90336
+        get_addresses:1
+        user_id:3
+        offset:0    // {optional}
+        limit:5     // {optional}
+
+27. favorites.php
+    i. add_to_favorites
+        accesskey:90336
+        add_to_favorites:1
+        user_id:3
+        product_id:1
+
+    ii. remove_from_favorites
+        accesskey:90336
+        remove_from_favorites:1
+        id:3 OR user_id : 413 OR (user_id:3 and product_id:301)
+
+    iii. get_favorites
+        accesskey:90336
+        get_favorites:1
+        user_id:3
+        offset:0    // {optional}
+        limit:5     // {optional}
+		
+28. get-products-offline.php
+    accesskey:90336
+    get_products_offline:1
+    product_ids:214,21
+    
+29. get-variants-offline.php
+    accesskey:90336
+    get_variants_offline:1
+    variant_ids:55,56
+        
+30. remove-fcm-id.php
+    accesskey:90336
+    remove_fcm_id:1
+    user_id:369
+
+31. get-faqs.php
+    accesskey:90336
+    get_faqs:1
+    offset:0            // {optional}
+    limit:10            // {optional}
+    sort:id             // {optional}
+    order:DESC / ASC    // {optional}
+
+32. get-similar-products.php
+    accesskey:90336
+    get_similar_products:1
+    product_id:211
+    category_id:28
+    user_id:369      // {optional}
+    limit:6          // {optional}
+
+33. get-all-data.php
+    accesskey:90336
+    user_id:413      // {optional}
+    limit:10         // {optional}
+    offset:0         // {optional}
+
+34. create-payment.php
+    accesskey:90336
+    order_id:13
+    gross_amount:12900
+
+35. ../stripe/create-payment.php
+    accesskey:90336
+    name:username
+    postal_code:12345
+    city:bhuj
+    amount:123456
+    order_id:12345
+    address_line1:jubeli_circle     // {optional}
+
+36. ../paytm/generate-checksum.php
+    accesskey:90336
+    ORDER_ID:10045
+    CUST_ID:45021
+    INDUSTRY_TYPE_ID:451287
+    CHANNEL_ID:789854654
+    TXN_AMOUNT:1.00
+    WEBSITE:https://paytm.com/
+    CALLBACK_URL:https://securegw.paytm.in/theia/paytmCallback?ORDER_ID=1542876
+
+37. ../paytm/valid-transction.php
+    accesskey:90336
+    orderId:OvgSiUdy1lzf9EA6Nqd2
+
+38. get-product-advt.php
+    accesskey:90336
+    adv_id:1        // {optional}
+    offset:0        // {optional}
+    limit:10        // {optional}
+
+39. get-blogs.php 
+    i. get_blogs
+        accesskey:90336
+        get_blogs:1  
+        slug:value              // {optional}
+        category_slug:value     // {optional} 
+        category_id:9           // {optional}
+        blog_id:1               // {optional} 
+        offset:0                // {optional}
+        limit:10                // {optional}
+        sort:id                 // {optional}
+        order:DESC / ASC        // {optional}
+        search:search_value     // {optional}
+
+    ii. get_blog_categories
+        accesskey:90336
+        get_blog_categories:1
+        category_id:2       // {optional}
+        slug:value          // {optional}
+        limit:10            // {optional}
+        offset:0            // {optional}
+        sort:id             // {optional}
+        order:ASC/DESC      // {optional}
+        search:search_value // {optional}
+            
+40. flash-sales.php
+    i. get-all-flash-sales
+        accesskey:90336
+        get-all-flash-sales:1
+        flash_sales_id:7            // {optional}
+        slug:weekend-summer-sale-1  // {optional}
+        offset:0         // {optional}
+        limit:10         // {optional}
+
+    ii. get-all-flash-sales-products
+        accesskey:90336
+        get-all-flash-sales-products:1
+        flash_sales_id:1                // {optional}
+        slug:weekend-summer-sale-1      // {optional}
+        product_slug:safe-wash-liquid-1 // {optional}
+        user_id:1       // {optional}
+        limit:10        // {optional}
+        offset:0        // {optional}
+
+41. shop.php
+    accesskey:90336
+    s:Rin - Liquid      // {optional}
+    category:29,30      // {optional}
+    sub-category:63,62  // {optional}
+    section:100         // {optional}
+    discount_filter:25  // {optional}
+    min_price:51        // {optional}
+    max_price:99        // {optional}
+    out_of_stock:1      // {optional}
+    offset:0            // {optional}
+    limit:10            // {optional}
+    sort:new / old / high / low     // {optional}
+
+42. support-ticket.php 
+    1. get_ticket_type
+        accesskey:90336
+        get_ticket_type:1
+        id:2                    // {optional}                      
+        type:damaged product    // {optional}
+        sort:id                 // {optioanl}
+        order:ASC/DESC          // {optional}
+        limit:10                // {optional}
+        offset:0                // {optional}
+        search:search_value     // {optional}
+
+    2. add_ticket
+        accesskey:90336
+        add_ticket:1
+        ticket_type_id:2
+        user_id:1
+        email:admin@gmail.com
+        title:product image not displying
+        message:its not showing images of products in App
+        image[]:FILE      // {optional}
+
+    3. edit_ticket
+        accesskey:90336
+        edit_ticket:1
+        ticket_id:2
+        ticket_type_id:2
+        user_id:1
+        title:product image not displying
+        email:test@gmail.com
+        message:its not showing images of products in App
+        status:3 or 5 [3 -> resolved, 5 -> reopened]
+        [1 -> pending, 2 -> opened, 3 -> resolved, 4 -> closed, 5 -> reopened]
+
+    4. get_tickets
+        accesskey:90336
+        get_tickets:1
+        ticket_id:2         // {optional}
+        ticket_type_id:2    // {optional}
+        user_id:1           // {optional}
+        search:test         // {optional}
+        sort:id             // {optioanl}
+        order:ASC/DESC      // {optional}
+        limit:10            // {optional}
+        offset:0            // {optional}
+        status:[1 -> pending, 2 -> opened, 3 -> resolved, 4 -> closed, 5 -> reopened]       // {optioanl}
+
+    5. send_message
+        accesskey:90336
+        send_message:1
+        type:user
+        user_id:1
+        ticket_id:2
+        message:testing
+        attachments[]: FILES  {type allowed -> image,video}     // {optional}
+
+    6. get_messages
+        accesskey:90336
+        get_messages:1
+        ticket_id:2         
+        user_type:2         // {optional}
+        user_id:2           // {optional}
+        search:test         // {optional}
+        sort:id             // {optional}
+        order:asc/desc      // {optional}
+        offset:0            // {optional}
+        limit:10            // {optional}

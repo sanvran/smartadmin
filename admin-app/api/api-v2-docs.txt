@@ -1,0 +1,431 @@
+API URL -->> 
+        https://admin.panel.url/admin-app/api/api-v2.php
+
+----------------------------------------------------------
+APIs list 
+----------------------------------------------------------
+
+1. add_category
+2. update_category
+3. delete_category
+4. get_categories
+5. add_subcategory
+6. update_subcategory
+7. delete_subcategory
+8. get_subcategories
+9. add_delivery_boy
+10.update_delivery_boy
+11.delete_delivery_boy
+12.get_delivery_boys
+13.add_products
+14.update_products
+15.delete_products
+16.get_products
+17.send_notification
+18.delete_notification
+19.get_notification
+20.get_orders
+21.get_customers
+22.get_financial_statistics
+23.login
+24. update_admin_fcm_id
+25. get_privacy_and_terms
+26. update_order_status
+27. update_bank_transfer_status
+28. get_permissions
+29. update_order_item_status
+30. delivery_boy_fund_transfers
+31. delivery_boy_transfer_fund
+32. get_all_data
+33. delete_other_images
+34. delete_variant
+35. get_units
+36. get_taxes
+37. upload_bank_transfers_attachment
+38. delete_bank_transfers_attachment
+39. get_order_invoice
+40. delete_variant_images
+
+------------------------------------------
+What parameters to be Passed?  See here >>
+------------------------------------------
+
+Use POST method to pass the parameters
+
+1. add_category
+    accesskey:90336
+    add_category:1
+    category_name:Beverages
+    category_subtitle:Cold Drinks, Soft Drinks, Sodas
+    upload_image:FILE
+    web_image:FILE
+
+2. update_category
+    accesskey:90336
+    update_category:1
+    id:122
+    category_name:Beverages
+    category_subtitle:Cold Drinks, Soft Drinks, Sodas
+    upload_image:FILE
+    web_image:FILE
+
+3. delete_category
+    accesskey:90336
+    delete_category:1
+    id:122
+
+4. get_categories
+    accesskey:90336
+    get_categories:1
+    category_id:28      // {optional}
+    limit:10            // {optional}
+    offset:0            // {optional}
+    sort:id             // {optional}
+    order:ASC/DESC      // {optional}
+
+5. add_subcategory
+    accesskey:90336
+    add_subcategory:1
+    subcategory_name:baverages
+    subcategory_subtitle:Cold Drinks, Soft Drinks, Sodas
+    category_id:46
+    upload_image:FILE
+
+6. update_subcategory
+    accesskey:90336
+    update_subcategory:1
+    id:122
+    subcategory_name:baverages
+    subcategory_subtitle:Cold Drinks, Soft Drinks, Sodas
+    category_id:46
+    upload_image:FILE   // {optional}
+
+7. delete_subcategory
+    accesskey:90336
+    delete_subcategory:1
+    id:122
+
+8. get_subcategories
+    accesskey:90336
+    get_subcategories:1
+    category_id:28      // {optional}
+    limit:10            // {optional}
+    offset:0            // {optional}
+    sort:id             // {optional}
+    order:ASC/DESC      // {optional}
+
+9. add_delivery_boy
+    accesskey:90336
+    add_delivery_boy:1		
+    name:delivery_boy
+    mobile:9963258652
+    address:time square
+    bonus:10
+    dob:2020-09-12
+    bank_name:SBI
+    account_number:12547896523652
+    account_name:DEMO
+    ifsc_code:254SBIfbfg
+    password:asd124
+    other_payment_info:description  // {optional}
+    driving_license:FILE
+    national_identity_card:FILE
+
+10. update_delivery_boy
+    accesskey:90336
+    update_delivery_boy:1
+    id:12
+    name:delivery_boy
+    mobile:9963258652
+    address:time square
+    bonus:10
+    dob:2020-09-12
+    bank_name:SBI
+    account_number:12547896523652
+    account_name:DEMO
+    ifsc_code:254SBIfbfg
+    status:1
+    other_payment_info:description // {optional}
+    password:asd124                // {optional}
+    driving_license:FILE           // {optional}
+    national_identity_card:FILE    // {optional}
+
+11. delete_delivery_boy
+    accesskey:90336
+    delete_delivery_boy:1		
+    id:302
+
+12. get_delivery_boys
+    accesskey:90336
+    get_delivery_boys:1
+    id:292           // {optional}
+    limit:10         // {optional}
+    offset:0         // {optional}
+    sort:id          // {optional}
+    order:ASC/DESC   // {optional}
+    search:value     // {optional}
+
+13. add_products
+    accesskey:90336
+    add_products:1
+    name:potato
+    category_id:31
+    subcategory_id:115
+    description:potatos
+    image:FILE          
+    tax_id:4                    // {optional}
+    manufacturer:india          // {optional}
+    made_in:india               // {optional}
+    return_status:0 / 1         // {optional}
+    cancelable_status:0 / 1     // {optional}
+    shipping_delivery:Potatos   // {optional}  
+    size_chart:FILE             // {optional}     
+    other_images[]:FILE         // {optional}
+    is_cod_allowed: 0 / 1       // {optional}
+    status: 0 / 1               // {optional}
+    indicator:	 1 - veg / 2 - non-veg             // {optional}
+    till_status: received / processed / shipped    // {optional}
+
+    type:packet
+    measurement:500,400
+    measurement_unit_id:4,1
+    price:175,145
+    stock:992,458
+    stock_unit_id:4,1
+    serve_for:Available / Sold Out
+    discounted_price:60,30       // {optional}
+    images[0][] : FILE           // {optional}
+    images[1][] : FILE           // {optional}
+
+    type:loose
+    measurement:1,1
+    measurement_unit_id:1,5
+    price:100,500
+    stock:997
+    stock_unit_id:1
+    serve_for:Available / Sold Out 
+    discounted_price:20,15       // {optional}
+    images[0][] : FILE           // {optional}
+    images[1][] : FILE           // {optional}
+
+14. update_products
+    accesskey:90336
+    update_products:1
+    id:507
+    name:potato
+    category_id:31
+    subcategory_id:115
+    description:potatos
+    product_variant_id:510,209
+    tax_id:4                    // {optional}
+    manufacturer:india          // {optional}
+    made_in:india               // {optional}
+    return_status:0 / 1         // {optional}
+    cancelable_status:0 / 1     // {optional}
+    shipping_delivery:Potatos   // {optional} 
+    size_chart:FILE             // {optional}     
+    image:FILE                  // {optional} 
+    other_images[]:FILE         // {optional} 
+    is_cod_allowed: 0 / 1       // {optional}
+    status: 0 / 1               // {optional}
+    till_status:received / processed / shipped      // {optional}
+    indicator: 1 - veg / 2 - non-veg                // {optional}
+
+    type:packet
+    measurement:500,100
+    measurement_unit_id:4,2
+    price:75,50
+    serve_for:Available / Sold Out
+    stock:992,987
+    stock_unit_id:4,2
+    discounted_price:10,5     // {optional}
+    images[0][] : FILE           // {optional}
+    images[1][] : FILE           // {optional}
+
+    type:loose
+    measurement:1,1
+    measurement_unit_id:1,5
+    price:100,400
+    serve_for:Available / Sold Out
+    stock:997
+    stock_unit_id:1
+    discounted_price:20,15       // {optional}
+    images[0][] : FILE           // {optional}
+    images[1][] : FILE           // {optional}
+
+15. delete_products
+    accesskey:90336
+    delete_products:1
+    product_id:722
+
+16. get_products
+    accesskey:90336
+    get_products:1
+    id:468              // {optional}
+    category_id:30      // {optional}
+    subcategory_id:119  // {optional}
+    limit:10            // {optional}
+    offset:0            // {optional}
+    search:value        // {optional}
+    filter:low_stock | out_stock    // {optional}
+    sort:new / old / high / low     // {optional}
+
+17. send_notification
+    accesskey:90336
+    send_notification:1  
+    title:test
+    message:testing
+    type:default / category / product
+    type_id:32
+    image:FILE          // {optional}
+
+18. delete_notification
+    accesskey:90336
+    delete_notification:1    
+    id:915
+
+19. get_notification
+    accesskey:90336
+    get_notification:1  
+    offset:0    // {optional}
+    limit:10    // {optional}
+    sort:id     // {optional}
+    order:asc/desc      // {optional}
+
+20. get_orders
+    accesskey:90336
+    get_orders:1
+    order_id:1008625        // {optional}
+    pickup:0 / 1            // {optional}
+    search:value            // {optional}
+    offset:0                // {optional}
+    limit:10                // {optional}
+    sort:id                 // {optional}
+    order:ASC/DESC          // {optional}
+    start_date:2020-10-29   // {optional} {YYYY-mm-dd}
+    end_date:2020-10-29     // {optional} {YYYY-mm-dd}
+    filter_order:received | processed | shipped | delivered | cancelled | returned | awaiting_payment // {optional}
+
+21. get_customers
+    accesskey:90336
+    get_customers:1
+    city_id:119     // {optional}
+    limit:10        // {optional}
+    offset:0        // {optional}
+    sort:id         // {optional}
+    order:ASC/DESC  // {optional}
+    search:value    // {optional}
+
+22. get_financial_statistics
+    accesskey:90336
+    get_financial_statistics:1
+
+23. login
+    accesskey:90336
+    username:admin
+    password:admin123
+    fcm_id:YOUR_FCM_ID   // {optional}
+    login:1
+
+24. update_admin_fcm_id
+    accesskey:90336
+    id:1
+    fcm_id:YOUR_FCM_ID
+    update_admin_fcm_id:1
+
+25. get_privacy_and_terms
+    accesskey:90336
+    get_privacy_and_terms:1
+
+26. update_order_status
+    accesskey:90336
+    update_order_status:1
+    id:169
+    status:cancelled        // {optional}
+    delivery_boy_id:20      // {optional}
+    seller_notes:test       // {optional}
+    pickup_time:2021-10-30 09:41:28        // {optional}
+
+27. update_bank_transfer_status
+    accesskey:90336
+    update_bank_transfer_status:1
+    order_id:123456
+    message:test
+    status:0 - Pending / 1 - Accepted / 2 - Rejected
+
+28. get_permissions
+    accesskey:90336
+    id:1
+    get_permissions:1
+    type: orders/payment/customers/featured/products_order/products/subcategories/categories/home_sliders/faqs/reports/locations/settings/transactions/notifications/return_requests/delivery_boys/promo_codes/new_offers   // {optional}
+
+29. update_order_item_status
+    accesskey:90336
+    update_order_item_status:1
+    order_item_id:7166
+    status:cancelled
+    order_id:3445
+
+30. delivery_boy_fund_transfers
+    accesskey:90336
+    delivery_boy_fund_transfers:1
+    delivery_boy_id:104     // {optional}
+    limit:10                // {optional}
+    offset:0                // {optional}
+    sort:id                 // {optional}
+    order:ASC/DESC          // {optional}
+    search:value            // {optional}
+
+31. delivery_boy_transfer_fund
+    accesskey:90336
+    delivery_boy_transfer_fund:1		
+    delivery_boy_id:302
+    delivery_boy_balance:20
+    amount:20
+    message: message from admin     // {optional}
+
+32. get_all_data
+    accesskey:90336
+    get_all_data:1
+
+33. delete_other_images
+    accesskey:90336
+    delete_other_images:1
+    product_id:1
+    image:1    // {index of other image array}
+
+34. delete_variant
+    accesskey:90336
+    delete_variant:1
+    variant_id:1
+
+35. get_units
+    accesskey:90336
+    get_units:1
+
+36. get_taxes
+    accesskey:90336
+    get_taxes:1
+
+37. upload_bank_transfers_attachment
+    accesskey:90336
+    upload_bank_transfers_attachment:1
+    order_id:1
+    image[]:FILE
+
+38. delete_bank_transfers_attachment
+    accesskey:90336
+    delete_bank_transfers_attachment:1
+    order_id:1
+    id:2
+
+39. get_order_invoice
+    accesskey:90336
+    get_order_invoice:1
+    order_id:1  OR invoice_id:2
+
+40. delete_variant_images
+    accesskey:90336
+    delete_variant_images:1
+    variant_id:1
+    image:1     // {index of image array}

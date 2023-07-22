@@ -1,0 +1,42 @@
+[12-Nov-2022 14:08:12 UTC] PHP Notice:  Undefined index: user in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 7
+[12-Nov-2022 14:08:12 UTC] PHP Stack trace:
+[12-Nov-2022 14:08:12 UTC] PHP   1. {main}() /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php:0
+[12-Nov-2022 19:38:12 Asia/Kolkata] PHP Notice:  Undefined index: id in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 13
+[12-Nov-2022 19:38:12 Asia/Kolkata] PHP Stack trace:
+[12-Nov-2022 19:38:12 Asia/Kolkata] PHP   1. {main}() /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php:0
+[12-Nov-2022 14:27:42 UTC] PHP Notice:  Undefined index: user in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 7
+[12-Nov-2022 14:27:42 UTC] PHP Stack trace:
+[12-Nov-2022 14:27:42 UTC] PHP   1. {main}() /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php:0
+[12-Nov-2022 19:57:42 Asia/Kolkata] PHP Notice:  Undefined index: id in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 13
+[12-Nov-2022 19:57:42 Asia/Kolkata] PHP Stack trace:
+[12-Nov-2022 19:57:42 Asia/Kolkata] PHP   1. {main}() /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php:0
+[17-Nov-2022 06:04:08 UTC] PHP Notice:  Undefined index: user in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 7
+[17-Nov-2022 06:04:08 UTC] PHP Stack trace:
+[17-Nov-2022 06:04:08 UTC] PHP   1. {main}() /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php:0
+[17-Nov-2022 11:34:08 Asia/Kolkata] PHP Notice:  Undefined index: id in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 13
+[17-Nov-2022 11:34:08 Asia/Kolkata] PHP Stack trace:
+[17-Nov-2022 11:34:08 Asia/Kolkata] PHP   1. {main}() /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php:0
+[17-Nov-2022 06:04:34 UTC] PHP Notice:  Undefined index: user in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 7
+[17-Nov-2022 06:04:34 UTC] PHP Stack trace:
+[17-Nov-2022 06:04:34 UTC] PHP   1. {main}() /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php:0
+[17-Nov-2022 11:34:34 Asia/Kolkata] PHP Notice:  Undefined index: id in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 13
+[17-Nov-2022 11:34:34 Asia/Kolkata] PHP Stack trace:
+[17-Nov-2022 11:34:34 Asia/Kolkata] PHP   1. {main}() /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php:0
+[20-Nov-2022 12:40:38 UTC] PHP Notice:  Undefined index: user in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 7
+[20-Nov-2022 12:40:38 UTC] PHP Stack trace:
+[20-Nov-2022 12:40:38 UTC] PHP   1. {main}() /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php:0
+[20-Nov-2022 18:10:38 Asia/Kolkata] PHP Notice:  Undefined index: id in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 13
+[20-Nov-2022 18:10:38 Asia/Kolkata] PHP Stack trace:
+[20-Nov-2022 18:10:38 Asia/Kolkata] PHP   1. {main}() /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php:0
+[09-May-2023 11:28:22 Asia/Kolkata] PHP Notice:  Undefined index: user in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 7
+[09-May-2023 11:28:22 Asia/Kolkata] PHP Notice:  Undefined index: id in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 13
+[09-May-2023 11:28:22 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type int in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 43
+[09-May-2023 11:28:22 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 43
+[11-May-2023 14:57:01 Asia/Kolkata] PHP Notice:  Undefined index: user in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 7
+[11-May-2023 14:57:01 Asia/Kolkata] PHP Notice:  Undefined index: id in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 13
+[11-May-2023 14:57:01 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type int in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 43
+[11-May-2023 14:57:01 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 43
+[17-May-2023 13:56:43 Asia/Kolkata] PHP Notice:  Undefined index: user in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 7
+[17-May-2023 13:56:44 Asia/Kolkata] PHP Notice:  Undefined index: id in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 13
+[17-May-2023 13:56:44 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type int in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 43
+[17-May-2023 13:56:44 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/sszurdxu/smartjeweller.in/smartadmin/public/db-operation.php on line 43
